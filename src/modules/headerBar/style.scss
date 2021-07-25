@@ -1,0 +1,14 @@
+.Header-bar{
+    grid-area: bar;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .bar-logo{
+        color: white;
+        font-size: 24px;
+        font-weight: 900;
+    }
+}
