@@ -6,9 +6,9 @@ const MenuBar = () => {
   return (
     <div className="Menu-bar">
       <menu className="tabs">
-        <a href="#">Contacto</a>
+        <a href="#test">Contacto</a>
         <a href="#presentation">Quien soy?</a>
-        <a href="#">Formacion</a>
+        <a href="#test2">Formacion</a>
       </menu>
       <div className="hamburguer">
         <Menu />
