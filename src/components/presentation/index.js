@@ -3,18 +3,18 @@ import "./style.scss";
 
 const Presentation = () => {
   return (
-    <div className="Presentation">
+    <div className="Presentation" id="presentation">
       <img
         class="clip-svg"
-        src="https://scontent.faep6-1.fna.fbcdn.net/v/t1.18169-9/18767615_10211380631344498_654244150846600549_n.jpg?_nc_cat=104&ccb=1-3&_nc_sid=174925&_nc_eui2=AeEtqOz2tTISvidL-XJzDFD4m5kp53d3i7-bmSnnd3eLv07zR5cmQ-3tZqxxKu3FBqw&_nc_ohc=94pv0eeD5roAX9uWmX3&_nc_oc=AQkEK4hunwd8U1DXHWFHieFBnP4gsjOB9DqbQWz5G2SS34eWaZ6Nk884KqqN7RBXd-KuZ9GXfRjiqpI0ceBAj5-p&tn=ZwhkFbvTGquUkJi7&_nc_ht=scontent.faep6-1.fna&oh=3f77064cad34d4ded1bc5543f1152bde&oe=60C589D7"
-        alt="Harry Potter"
+        src="https://picsum.photos/200/300"
+        alt="img"
       ></img>
       <div className="presentation-photo">
         <svg width="0" height="0">
           <defs>
             <clipPath id="myClip">
-              <circle cx="100" cy="100" r="40" />
-              <circle cx="60" cy="60" r="40" />
+              <circle cx="100" cy="100" r="100" />
+              <circle cx="100" cy="100" r="100" />
             </clipPath>
           </defs>
         </svg>

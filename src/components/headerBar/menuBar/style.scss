@@ -1,0 +1,12 @@
+.Menu-bar{
+    display: flex;
+    justify-content: space-between;
+    a{
+        margin: 0 10px;
+        color: white;
+        text-decoration:none
+    }
+    svg{
+        color:white
+    }
+}

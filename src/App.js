@@ -1,7 +1,7 @@
 import "./sass/app.scss";
-import LandingPage from "./modules/landingPage";
-import HeaderBar from "./modules/headerBar";
-import Presentation from "./modules/presentation";
+import LandingPage from "./components/landingPage";
+import HeaderBar from "./components/headerBar";
+import Presentation from "./components/presentation";
 
 function App() {
   return (

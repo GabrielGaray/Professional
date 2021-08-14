@@ -1,0 +1,17 @@
+.Presentation {
+  display: grid;
+  grid-template-columns: 1fr 0 2fr;
+  grid-gap: 20px;
+  width: 100%;
+  height: 100vh;
+  padding: 5% 0;
+  img{
+    justify-self: center;
+  }
+  .clip-svg {
+    clip-path: url(#myClip);
+  }
+  .presentation-text {
+    color: white;
+  }
+}

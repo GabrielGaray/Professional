@@ -1,14 +1,16 @@
 .Header-bar{
-    grid-area: bar;
     position: fixed;
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 25%;
     width: 100%;
+    z-index: 999;
     .bar-logo{
         color: white;
         font-size: 24px;
         font-weight: 900;
+    }
+    .Menu-bar{
+        width: 100%;
     }
 }
