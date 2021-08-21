@@ -7,8 +7,8 @@ const MenuBar = () => {
     <div className="Menu-bar">
       <menu className="tabs">
         <a href="#test">Contacto</a>
-        <a href="#presentation">Quien soy?</a>
-        <a href="#test2">Formacion</a>
+        <a href="#presentation">Quien Soy?</a>
+        <a href="#service">Servicios</a>
       </menu>
       <div className="hamburguer">
         <Menu />

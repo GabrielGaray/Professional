@@ -1,0 +1,14 @@
+.Title {
+  &.white-yellow-underline {
+    h2 {
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    hr {
+      height: 1px;
+      background-color: var(--yellow);
+      border-color: var(--yellow);
+      width: 55px;
+    }
+  }
+}

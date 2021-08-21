@@ -1,8 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  --black: #000000;
+  --softBlack: #0e0e0e;
+  --darkGray: #58555a;
+  --gray: #7f7f7f;
+  --yellow: #fbed21;
+  --white: #ffffff;
+  --error: #d93025;
 }
 
 body {
-  background-color: black;
+  background-color: var(--black);
+}
+
+.App {
+  .Landing-page,
+  .Presentation,
+  .Service {
+    padding: 0 45px;
+  }
 }

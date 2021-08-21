@@ -1,15 +1,12 @@
 .Landing-page {
-  .image-landing {
-    background-image: linear-gradient(
-        to bottom,
-        black,
-        transparent,
-        transparent
-      ),
-      url("https://picsum.photos/seed/picsum/1000/1000");
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100vh;
-  }
+  background-image: linear-gradient(
+      to bottom,
+      black,
+      transparent,
+      transparent
+    ),
+    url("https://picsum.photos/1000/600");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }

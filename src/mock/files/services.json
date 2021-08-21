@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Diseno Web",
+        "image": "https://picsum.photos/600/400"
+    },
+    {
+        "name": "Desarrollo Web",
+        "image": "https://picsum.photos/600/500"
+    },
+    {
+        "name": "Diseno de Aplicacion",
+        "image": "https://picsum.photos/600/600"
+    },
+    {
+        "name": "Investigación UX",
+        "image": "https://picsum.photos/600/700"
+    }
+]
