@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import ModuleEComerce from "../shared/organisms/moduleEComerce";
-import resServices from "./../../mock/files/services.json";
+import resProducts from "./../../mock/files/products.json";
 import "./style.scss";
 
-const Service = () => {
-  const [services, setServices] = useState([]);
+const Product = () => {
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const res = new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve(resServices);
+        resolve(resProducts);
       }, 1000);
     });
     res.then((result) => {
-      setServices(result);
+      setProducts(result);
     });
   }, []);
 
   return (
-    <div className="Service" id="service">
-      <ModuleEComerce title="Servicios" items={services} />
+    <div className="Product" id="product">
+      <ModuleEComerce title="Productos" items={products} />
     </div>
   );
 };
 
-export default Service;
+export default Product;

@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "../shared/title";
+import Title from "../shared/atoms/title";
 import "./style.scss";
 
 const Presentation = () => {
@@ -8,7 +8,7 @@ const Presentation = () => {
       <Title name="¿Quien soy?" className="white-yellow-underline" />
       <div className="presentation-container">
         <img
-          class="clip-svg"
+          className="clip-svg"
           src="https://picsum.photos/200/300"
           alt="img"
         ></img>

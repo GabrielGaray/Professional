@@ -1,0 +1,16 @@
+.ServiceDetail{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    .service-detail-img{
+        background-image: linear-gradient(
+          to bottom,
+          black,
+          transparent,
+          transparent
+        ),
+        url("https://picsum.photos/1000/600");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+}

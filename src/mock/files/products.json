@@ -1,0 +1,18 @@
+[
+    {
+        "name": "Remera",
+        "image": "https://picsum.photos/id/535/600/400"
+    },
+    {
+        "name": "Campera",
+        "image": "https://picsum.photos/id/669/600/500"
+    },
+    {
+        "name": "Gorra",
+        "image": "https://picsum.photos/id/823/600/600"
+    },
+    {
+        "name": "Buzo",
+        "image": "https://picsum.photos/id/338/600/700"
+    }
+]
