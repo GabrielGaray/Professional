@@ -5,7 +5,7 @@ import "./style.scss";
 const Presentation = () => {
   return (
     <div className="Presentation" id="presentation">
-      <Title name="¿Quien soy?" className="white-yellow-underline" />
+      <Title name="¿Quien soy?" className="white-yellow-underline" underline />
       <div className="presentation-container">
         <img
           className="clip-svg"

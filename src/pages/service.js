@@ -2,7 +2,7 @@ import ServiceDetail from "../components/service/detail";
 
 function ServicePage() {
   return (
-    <div className="ServicePage">
+    <div className="Service-page">
       <ServiceDetail />
     </div>
   );

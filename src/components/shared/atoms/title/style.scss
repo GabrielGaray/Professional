@@ -11,4 +11,9 @@
       width: 55px;
     }
   }
+  &.black {
+    h2 {
+      color: var(--black);
+    }
+  }
 }

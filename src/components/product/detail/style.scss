@@ -1,0 +1,12 @@
+.Product-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .product-detail-img {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  .product-detail-container {
+    background: var(--white);
+  }
+}

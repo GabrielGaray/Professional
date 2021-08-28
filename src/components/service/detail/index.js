@@ -3,7 +3,7 @@ import "./style.scss";
 
 const ServiceDetail = () => {
   return (
-    <div className="ServiceDetail">
+    <div className="Service-detail">
         <div className="service-detail-img"></div>
         <div className="service-detail-container">
           precio: $300

@@ -6,7 +6,7 @@ import "./style.scss";
 const ModuleEComerce = ({ items, title, className }) => {
   return (
     <div className={`Module-e-comerce ${className}`}>
-      <Title name={title} className="white-yellow-underline" />
+      <Title name={title} className="white-yellow-underline" underline/>
       <BoxContainer className="e-comerce-container" items={items} />
     </div>
   );
