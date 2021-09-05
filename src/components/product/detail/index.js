@@ -1,18 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import DetailEComerce from "../../shared/organisms/detailEComerce";
+import { CartContext } from "../../../context/cartContext";
+import Button from "../../shared/atoms/button";
+import Input from "../../shared/atoms/input";
+import ButtonContainer from "../../shared/molecules/buttonContainer";
+import DetailItem from "../../shared/organisms/detailITem";
 import resProducts from "./../../../mock/files/products.json";
 import "./style.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
-
+  const { addToCart,cart } = useContext(CartContext);
+  const buttons = [
+    { name: "Agregar al carrito", onClick: () => addToCart(product) },
+    { name: "Comprar" },
+  ];
   const [product, setProduct] = useState([]);
-
+  
   useEffect(() => {
     const res = new Promise((resolve) => {
       setTimeout(() => {
-        resolve(resProducts.find((prod) => prod._id === id));
+        resolve(resProducts.find((prod) => prod.id === id));
       }, 1000);
     });
     res.then((result) => {
@@ -33,7 +41,21 @@ const ProductDetail = () => {
       url(${product?.image})`,
         }}
       ></div>
-      <DetailEComerce className="product-detail-container" item={product} />
+      <DetailItem
+        className="product-detail-container"
+        item={product}
+        content={
+          <React.Fragment>
+            <p>{product?.detail}</p>
+            <label>{product?.price}</label>
+            <div className="item-count">
+              <Input value={cart?.amount} />
+              <Button name="+" onClick={() => addToCart(product)} />
+            </div>
+            <ButtonContainer items={buttons} />
+          </React.Fragment>
+        }
+      />
     </div>
   );
 };

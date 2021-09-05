@@ -1,0 +1,20 @@
+.Cart {
+  z-index: 999;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  padding: 15px;
+  .cart-number {
+    font-weight: 1000;
+    position: absolute;
+    color: var(--error);
+    top: 0px;
+    left: 0px;
+  }
+  svg {
+    color: var(--black);
+    stroke: var(--white);
+    stroke-width: 1px;
+    font-size: 30px;
+  }
+}

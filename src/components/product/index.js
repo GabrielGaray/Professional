@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ModuleEComerce from "../shared/organisms/moduleEComerce";
+import ExhibitionModule from "../shared/organisms/exhibitionModule";
 import resProducts from "./../../mock/files/products.json";
 import "./style.scss";
 
@@ -19,7 +19,7 @@ const Product = () => {
 
   return (
     <div className="Product" id="product">
-      <ModuleEComerce title="Productos" items={products} />
+      <ExhibitionModule title="Productos" items={products} />
     </div>
   );
 };

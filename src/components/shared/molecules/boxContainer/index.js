@@ -11,7 +11,7 @@ const BoxContainer = ({items,height="250px",className}) => {
               key={index}
               data={item}
               height={height}
-              link={`/product/${item?._id}`}
+              link={`/product/${item?.id}`}
             />
           ))}
     </div>

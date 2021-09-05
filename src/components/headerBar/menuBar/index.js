@@ -5,11 +5,14 @@ import "./style.scss";
 const MenuBar = () => {
   return (
     <div className="Menu-bar">
-      <menu className="tabs">
-        <a href="#test">Contacto</a>
-        <a href="#presentation">Quien Soy?</a>
-        <a href="#product">Productos</a>
-      </menu>
+      <ul className="tabs">
+        <li>
+          <a href="#presentation">Quien Soy?</a>
+        </li>
+        <li>
+          <a href="#product">Productos</a>
+        </li>
+      </ul>
       <div className="hamburguer">
         <Menu />
       </div>

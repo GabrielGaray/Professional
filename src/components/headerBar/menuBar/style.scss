@@ -1,11 +1,7 @@
-.Menu-bar{
+.Menu-bar,ul{
     display: flex;
     justify-content: space-between;
-    a{
-        margin: 0 10px;
-        color: white;
-        text-decoration:none
-    }
+    list-style:none;
     svg{
         color:white
     }
