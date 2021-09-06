@@ -9,4 +9,11 @@
   .product-detail-container {
     background: var(--white);
   }
+  .item-count{
+    display: flex;
+    input{
+      width: 30px;
+      margin: 0 5px;
+    }
+  }
 }

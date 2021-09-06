@@ -52,9 +52,9 @@ const ProductDetail = () => {
         content={
           <React.Fragment>
             <p>{product?.detail}</p>
-            <label>{product?.price}</label>
             <div className="item-count">
-              <Input value={productInCart?.amount} />
+            <label>{`${product?.price} x`}</label>
+              <Input value={cart?.amount} />
               <Button name="+" onClick={() => addToCart(product)} />
             </div>
             <ButtonContainer items={buttons} />
