@@ -10,13 +10,14 @@ import "./style.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart,cart } = useContext(CartContext);
+  const { addToCart, cart } = useContext(CartContext);
   const buttons = [
     { name: "Agregar al carrito", onClick: () => addToCart(product) },
     { name: "Comprar" },
   ];
   const [product, setProduct] = useState([]);
-  
+  const [productInCart, setProductInCart] = useState(undefined);
+
   useEffect(() => {
     const res = new Promise((resolve) => {
       setTimeout(() => {
@@ -28,6 +29,10 @@ const ProductDetail = () => {
     });
   }, [id]);
 
+  useEffect(() => {
+    setProductInCart(cart.find((prod) => prod.id === id));
+  }, [cart, id]);
+  
   return (
     <div className="Product-detail">
       <div
@@ -49,7 +54,7 @@ const ProductDetail = () => {
             <p>{product?.detail}</p>
             <label>{product?.price}</label>
             <div className="item-count">
-              <Input value={cart?.amount} />
+              <Input value={productInCart?.amount} />
               <Button name="+" onClick={() => addToCart(product)} />
             </div>
             <ButtonContainer items={buttons} />

@@ -27,8 +27,8 @@ export const CartProvider = ({ children }) => {
     
     const deleteCart = () => {
       setCart([]);
-  };
-  
+    };
+    
   const isInCart = (id) => {
     return cart.findIndex((product) => product.id === id);
   };
@@ -38,11 +38,11 @@ export const CartProvider = ({ children }) => {
     value={{
       cart,
       isInCart,
-        addToCart,
-        deleteToCart,
-        cartQuantity,
-        deleteCart,
-      }}
+      addToCart,
+      deleteToCart,
+      cartQuantity,
+      deleteCart,
+    }}
     >
       <Cart show={cart?.length > 0} number={cart?.length} />
       {children}
