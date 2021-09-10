@@ -7,6 +7,7 @@ import DetailItem from "../../shared/organisms/detailITem";
 import resProducts from "./../../../mock/files/products.json";
 import "./style.scss";
 
+
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, cart } = useContext(CartContext);
