@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../../../context/cartContext";
 import Button from "../../shared/atoms/button";
-import Input from "../../shared/atoms/input";
 import ButtonContainer from "../../shared/molecules/buttonContainer";
 import DetailItem from "../../shared/organisms/detailITem";
 import resProducts from "./../../../mock/files/products.json";
@@ -10,13 +9,13 @@ import "./style.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart,cart } = useContext(CartContext);
+  const { addToCart, cart } = useContext(CartContext);
   const buttons = [
     { name: "Agregar al carrito", onClick: () => addToCart(product) },
     { name: "Comprar" },
   ];
   const [product, setProduct] = useState([]);
-  
+
   useEffect(() => {
     const res = new Promise((resolve) => {
       setTimeout(() => {
@@ -27,6 +26,10 @@ const ProductDetail = () => {
       setProduct(result);
     });
   }, [id]);
+
+  const getProductInCart = () => {
+    return cart?.find((product) => product.id === id);
+  };
 
   return (
     <div className="Product-detail">
@@ -48,8 +51,8 @@ const ProductDetail = () => {
           <React.Fragment>
             <p>{product?.detail}</p>
             <div className="item-count">
-            <label>{`${product?.price} x`}</label>
-              <Input value={cart?.amount} />
+              <label>{`${product?.price} x`}</label>
+              <p>{getProductInCart()?.amount || 0}</p>
               <Button name="+" onClick={() => addToCart(product)} />
             </div>
             <ButtonContainer items={buttons} />

@@ -5,7 +5,7 @@ export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
-  
+
   const addToCart = (product) => {
     const indexProduct = isInCart(product.id);
     if (indexProduct !== -1) {
@@ -13,34 +13,26 @@ export const CartProvider = ({ children }) => {
       setCart(cart);
     } else setCart([...cart, product]);
   };
-  
+
   const deleteToCart = (id) => {
     setCart(cart.filter((product) => product.id !== id));
   };
-  
-  const cartQuantity = () => {
-    return cart.reduce(
-      (accumulator, product) => accumulator + product.amount,
-      0
-      );
-    };
-    
-    const deleteCart = () => {
-      setCart([]);
+
+  const deleteCart = () => {
+    setCart([]);
   };
-  
+
   const isInCart = (id) => {
     return cart.findIndex((product) => product.id === id);
   };
-  
+
   return (
     <CartContext.Provider
-    value={{
-      cart,
-      isInCart,
+      value={{
+        cart,
+        isInCart,
         addToCart,
         deleteToCart,
-        cartQuantity,
         deleteCart,
       }}
     >

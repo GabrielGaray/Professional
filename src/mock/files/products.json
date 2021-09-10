@@ -4,7 +4,7 @@
         "name": "Remera",
         "image": "https://picsum.photos/id/535/600/400",
         "detail": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.",
-        "price": "$35.000",
+        "price": 35000,
         "amount": 1
     },
     {
@@ -12,7 +12,7 @@
         "name": "Campera",
         "image": "https://picsum.photos/id/669/600/500",
         "detail": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.",
-        "price": "$35.000",
+        "price": 35000,
         "amount": 1
     },
     {
@@ -20,7 +20,7 @@
         "name": "Gorra",
         "image": "https://picsum.photos/id/823/600/600",
         "detail": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.",
-        "price": "$35.000",
+        "price": 35000,
         "amount": 1
     },
     {
@@ -28,7 +28,7 @@
         "name": "Buzo",
         "image": "https://picsum.photos/id/338/600/700",
         "detail": "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.",
-        "price": "$35.000",
+        "price": 35000,
         "amount": 1
     }
 ]

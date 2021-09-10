@@ -5,5 +5,20 @@
   padding: 5% 0 0 0;
   .cart-list {
     display: flex;
+    flex-direction: column;
+    .cart-product {
+      display: flex;
+      label {
+        margin-right: 15px;
+      }
+      button{
+        margin-left: 15px;
+      }
+    }
+  }
+  .cart-total {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
