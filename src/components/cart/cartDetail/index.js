@@ -3,16 +3,7 @@ import { CartContext } from "../../../context/cartContext";
 import "./style.scss";
 
 const CartDetail = () => {
-  const { cart, deleteToCart } = useContext(CartContext);
-  const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    const calculateTotal = cart.reduce(
-      (accumulator, product) => accumulator + product?.price * product?.amount,
-      0
-    );
-    setTotal(calculateTotal);
-  }, [cart]);
+  const { cart, deleteToCart, totalPrice } = useContext(CartContext);
 
   return (
     <div className="Cart-detail">
@@ -26,10 +17,10 @@ const CartDetail = () => {
           </div>
         ))}
       </div>
-      {total > 0 ? (
+      {totalPrice > 0 ? (
         <div className="cart-total">
           <h3>Total:</h3>
-          <p>{total}</p>
+          <p>{totalPrice}</p>
         </div>
       ) : (
         <p>No hay nada por aqui</p>
