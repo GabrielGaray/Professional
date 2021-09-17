@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
 import ExhibitionModule from "../shared/organisms/exhibitionModule";
-import resProducts from "./../../mock/files/products.json";
+import RequestManager from "../../firebase/requestManager";
+
+// import resProducts from "./../../mock/files/products.json";
 import "./style.scss";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const res = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(resProducts);
-      }, 1000);
-    });
-    res.then((result) => {
-      setProducts(result);
-    });
+    // const res = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(resProducts);
+    //   }, 1000);
+    // });
+    // res.then((result) => {
+    //   setProducts(result);
+    // });
+    RequestManager.get("products")
   }, []);
 
   return (
