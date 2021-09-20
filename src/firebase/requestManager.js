@@ -10,7 +10,7 @@ class RequestManager {
     collection
       .get()
       .then((response) => {
-        console.log("res", response);
+        console.log("res", response.docs);
       })
       .catch((error) => {
         console.log("error", error);
