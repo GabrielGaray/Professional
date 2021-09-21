@@ -1,16 +1,15 @@
 import { getFirestore } from "./config";
-const db = getFirestore()
+const db = getFirestore();
 
 class RequestManager {
-
-  get(nameCollection, query) {
+  async get(nameCollection, query) {
     let collection = db.collection(nameCollection);
-    if (query) collection = collection.where(query);
+    if (query) collection = collection.where(...query);
 
-    collection
+    const res = await collection
       .get()
       .then((response) => {
-        console.log("res", response.docs);
+        return parseRes(response.docs);
       })
       .catch((error) => {
         console.log("error", error);
@@ -18,8 +17,16 @@ class RequestManager {
       .finally(() => {
         // setLoading(false);
       });
+
+    return res;
   }
 }
+
+const parseRes = (response) => {
+  if (response?.length < 2)
+    return { ...response[0].data(), id: response[0].id };
+  return response.map((doc) => ({ ...doc.data(), id: doc.id }));
+};
 
 const instance = new RequestManager();
 Object.freeze(instance);

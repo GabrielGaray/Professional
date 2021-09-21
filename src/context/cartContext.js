@@ -14,11 +14,11 @@ export const CartProvider = ({ children }) => {
       let localCart = [...cart];
       localCart[indexProduct].amount = ++cart[indexProduct].amount;
       setCart(localCart);
-    } else setCart([...cart, product]);
+    } else setCart([...cart, { ...product, amount: 1 }]);
   };
 
   const deleteToCart = (id) => {
-    setCart(cart?.filter((product) => product.id !== id));
+    setCart(cart?.filter((product) => product?.id !== id));
   };
 
   const deleteCart = () => {
@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const isInCart = (id) => {
-    return cart?.findIndex((product) => product.id === id);
+    return cart?.findIndex((product) => product?.id === id);
   };
 
   useEffect(() => {
@@ -43,8 +43,6 @@ export const CartProvider = ({ children }) => {
     setTotalPrice(calculateTotalPrice);
   }, [cart]);
 
-
-
   return (
     <CartContext.Provider
       value={{
@@ -53,7 +51,7 @@ export const CartProvider = ({ children }) => {
         addToCart,
         deleteToCart,
         deleteCart,
-        totalPrice
+        totalPrice,
       }}
     >
       <Cart show={amountProducts > 0} number={amountProducts} />

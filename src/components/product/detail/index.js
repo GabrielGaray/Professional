@@ -4,9 +4,9 @@ import { CartContext } from "../../../context/cartContext";
 import Button from "../../shared/atoms/button";
 import ButtonContainer from "../../shared/molecules/buttonContainer";
 import DetailItem from "../../shared/organisms/detailITem";
-import resProducts from "./../../../mock/files/products.json";
+import RequestManager from "../../../firebase/requestManager";
+import firebase from "firebase/app";
 import "./style.scss";
-
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -16,22 +16,18 @@ const ProductDetail = () => {
     { name: "Comprar" },
   ];
   const [product, setProduct] = useState([]);
-
+  
   useEffect(() => {
-    const res = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(resProducts.find((prod) => prod.id === id));
-      }, 1000);
-    });
-    res.then((result) => {
-      setProduct(result);
-    });
+    (async () => {
+      const res = await RequestManager.get("products",[firebase.firestore.FieldPath.documentId(),"==",id]);
+      setProduct({ ...res, amount: 0 });
+    })();
   }, [id]);
-
+  
   const getProductInCart = () => {
-    return cart?.find((product) => product.id === id);
+    return cart?.find((product) => product?.id === id);
   };
-
+  
   return (
     <div className="Product-detail">
       <div
