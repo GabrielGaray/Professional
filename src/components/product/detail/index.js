@@ -6,28 +6,47 @@ import ButtonContainer from "../../shared/molecules/buttonContainer";
 import DetailItem from "../../shared/organisms/detailITem";
 import RequestManager from "../../../firebase/requestManager";
 import firebase from "firebase/app";
+import { UIContext } from "../../../context/uiContext";
+import { useHistory } from "react-router-dom";
+
 import "./style.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const { addToCart, cart } = useContext(CartContext);
+  const { setLoading } = useContext(UIContext);
+  const history = useHistory();
+
   const buttons = [
     { name: "Agregar al carrito", onClick: () => addToCart(product) },
-    { name: "Comprar" },
+    { name: "Comprar", onClick: () => handleBuy() },
   ];
   const [product, setProduct] = useState([]);
-  
+
+  const handleBuy = () => {
+    if (!cart.some((prod) => prod.name === product.name)) {
+      addToCart(product);
+    }
+    history.push("/cart");
+  };
+
   useEffect(() => {
     (async () => {
-      const res = await RequestManager.get("products",[firebase.firestore.FieldPath.documentId(),"==",id]);
+      setLoading(true);
+      const res = await RequestManager.get("products", [
+        firebase.firestore.FieldPath.documentId(),
+        "==",
+        id,
+      ]);
       setProduct({ ...res, amount: 0 });
+      setLoading(false);
     })();
-  }, [id]);
-  
+  }, [id, setLoading]);
+
   const getProductInCart = () => {
     return cart?.find((product) => product?.id === id);
   };
-  
+
   return (
     <div className="Product-detail">
       <div

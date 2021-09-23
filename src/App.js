@@ -12,8 +12,8 @@ import CartPage from "./pages/cart";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <UIContextProvider>
+      <UIContextProvider>
+        <div className="App">
           <CartProvider>
             <HeaderBar />
             <Switch>
@@ -23,8 +23,8 @@ function App() {
               <Route path={`/cart`} exact component={CartPage} />
             </Switch>
           </CartProvider>
-        </UIContextProvider>
-      </div>
+        </div>
+      </UIContextProvider>
     </BrowserRouter>
   );
 }
