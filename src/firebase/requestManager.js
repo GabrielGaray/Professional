@@ -40,7 +40,11 @@ const detectIdInBody = (body) => {
   if (!nameKeyId) return;
   let keyId = body[nameKeyId];
 
-  if (Array.isArray(keyId)) keyId = body[nameKeyId].map((element) => db.doc(element));
+  if (Array.isArray(keyId))
+    keyId = body[nameKeyId].map((element) => ({
+      ...element,
+      id: db.doc(element.id),
+    }));
   else db.doc(keyId);
 
   return {

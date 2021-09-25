@@ -14,8 +14,8 @@ const CartDetail = () => {
   const handleSubmit = async () => {
     setLoading(true);
     const body = {
-      price: totalPrice,
-      idProducts: setArray(cart),
+      totalPrice: totalPrice,
+      idProduct: setArray(cart),
     };
     const res = await RequestManager.add("sale", body);
     setLoading(false);
@@ -25,7 +25,10 @@ const CartDetail = () => {
   };
 
   const setArray = (products) => {
-    return products.map((product) => `sale/${product.id}`);
+    return products.map((product) => ({
+      ...product,
+      id: `sale/${product.id}`,
+    }));
   };
 
   return (
@@ -49,7 +52,11 @@ const CartDetail = () => {
         <div className="cart-total">
           <h3>Total:</h3>
           <p>{totalPrice}</p>
-          <button disabled={loading} type="submit" onClick={handleSubmit}>
+          <button
+            disabled={loading}
+            type="submit"
+            onClick={() => handleSubmit()}
+          >
             Finalizar Compra
           </button>
         </div>
