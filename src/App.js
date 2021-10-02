@@ -18,6 +18,7 @@ function App() {
             <HeaderBar />
             <Switch>
               <Route path={`/`} exact component={Home} />
+              <Route path={`/home/:section`} exact component={Home} />
               <Route path={`/service/:id`} exact component={ServicePage} />
               <Route path={`/product/:id`} exact component={ProductPage} />
               <Route path={`/cart`} exact component={CartPage} />
