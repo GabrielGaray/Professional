@@ -28,11 +28,12 @@ const ServiceDetail = () => {
   }, [id, setLoading]);
 
   const handleAlert = () => {
-    let msj = window.prompt(
+    let email = window.prompt(
       "Deja tu email para contactarnos",
       "Email o Telefono"
     );
-    if (msj === "Email o Telefono") return handleAlert();
+    if (!email) return;
+    if (email === "Email o Telefono") return handleAlert();
     window.alert(
       `Se ha enviado con exito el mensaje, en unos minutos va ser contactado`
     );
