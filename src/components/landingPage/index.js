@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.scss";
 
-const LandingPage = () => {
+const LandingPage = ({hidden}) => {
   return (
-    <div className="Landing-page">
+    <div className="Landing-page" hidden={hidden}>
     </div>
   );
 };

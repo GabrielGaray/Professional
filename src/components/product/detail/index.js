@@ -8,18 +8,22 @@ import RequestManager from "../../../firebase/requestManager";
 import firebase from "firebase/app";
 import { UIContext } from "../../../context/uiContext";
 import { useHistory } from "react-router-dom";
-
+import { Add, Remove } from "@material-ui/icons";
 import "./style.scss";
 
 const ProductDetail = () => {
   const { id } = useParams();
-  const { addToCart, cart } = useContext(CartContext);
+  const { addToCart, substractToCart, cart } = useContext(CartContext);
   const { setLoading } = useContext(UIContext);
   const history = useHistory();
 
   const buttons = [
-    { name: "Agregar al carrito", onClick: () => addToCart(product) },
-    { name: "Comprar", onClick: () => handleBuy() },
+    {
+      name: "Agregar al carrito",
+      onClick: () => addToCart(product),
+      className: "buy-button",
+    },
+    { name: "Comprar", onClick: () => handleBuy(), className: "buy-button" },
   ];
   const [product, setProduct] = useState([]);
 
@@ -67,9 +71,17 @@ const ProductDetail = () => {
           <React.Fragment>
             <p>{product?.detail}</p>
             <div className="item-count">
-              <label>{`${product?.price} x`}</label>
-              <p>{getProductInCart()?.amount || 0}</p>
-              <Button name="+" onClick={() => addToCart(product)} />
+              <div className="item-price">
+                <label>{`$${product?.price} x`}</label>
+                <p>{getProductInCart()?.amount || 0}</p>
+              </div>
+              <div className="item-button">
+                <Button name={<Remove />} onClick={() => substractToCart(product)} />
+                <Button
+                  name={<Add />}
+                  onClick={() => addToCart(product)}
+                />
+              </div>
             </div>
             <ButtonContainer items={buttons} />
           </React.Fragment>

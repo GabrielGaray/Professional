@@ -2,9 +2,9 @@ import React from "react";
 import Title from "../shared/atoms/title";
 import "./style.scss";
 
-const Presentation = () => {
+const Presentation = ({hidden}) => {
   return (
-    <div className="Presentation" id="presentation">
+    <div className="Presentation" id="presentation" hidden={hidden}>
       <Title name="¿Quien soy?" className="white-yellow-underline" underline />
       <div className="presentation-container">
         <img

@@ -5,6 +5,7 @@
   --softBlack: #0e0e0e;
   --darkGray: #58555a;
   --gray: #7f7f7f;
+  --softGray: #e5e7eb;
   --yellow: #fbed21;
   --white: #ffffff;
   --error: #d93025;
@@ -19,7 +20,7 @@ body {
   .Presentation,
   .Service,
   .Product {
-    padding: 0 45px;
+    padding: 35px 45px;
   }
 }
 .loading {

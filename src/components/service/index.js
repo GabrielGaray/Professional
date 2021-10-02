@@ -1,25 +1,30 @@
-import React, { useEffect, useState } from "react";
-import ModuleEComerce from "../shared/organisms/moduleEComerce";
-import resServices from "./../../mock/files/services.json";
+import React, { useContext, useEffect, useState } from "react";
+import { UIContext } from "../../context/uiContext";
+import RequestManager from "../../firebase/requestManager";
 import "./style.scss";
+import ExhibitionModule from "../shared/organisms/exhibitionModule";
 
-const Service = () => {
+const Service = ({hidden}) => {
   const [services, setServices] = useState([]);
 
+  const { setLoading } = useContext(UIContext);
+
   useEffect(() => {
-    const res = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(resServices);
-      }, 1000);
-    });
-    res.then((result) => {
-      setServices(result);
-    });
-  }, []);
+    (async () => {
+      setLoading(true);
+      const res = await RequestManager.get("services");
+      setServices(res);
+      setLoading(false);
+    })();
+  }, [setServices, setLoading]);
 
   return (
-    <div className="Service" id="service">
-      <ModuleEComerce title="Servicios" items={services} />
+    <div className="Service" id="service" hidden={hidden}>
+      <ExhibitionModule
+        title="Servicios"
+        items={services}
+        sourceRoute="service"
+      />
     </div>
   );
 };

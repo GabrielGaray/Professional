@@ -5,7 +5,7 @@ import { UIContext } from "../../context/uiContext";
 
 import "./style.scss";
 
-const Product = () => {
+const Product = ({ hidden }) => {
   const { setLoading } = useContext(UIContext);
 
   const [products, setProducts] = useState([]);
@@ -20,8 +20,12 @@ const Product = () => {
   }, [setLoading]);
 
   return (
-    <div className="Product" id="product">
-      <ExhibitionModule title="Productos" items={products} />
+    <div className="Product" id="product" hidden={hidden}>
+      <ExhibitionModule
+        title="Productos"
+        items={products}
+        sourceRoute="product"
+      />
     </div>
   );
 };

@@ -1,22 +1,23 @@
-.Header-bar{
-    position: fixed;
-    top: 0;
-    display: grid;
-    grid-template-columns: auto 25%;
+.Header-bar {
+  position: fixed;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto 25%;
+  width: 100%;
+  z-index: 999;
+  padding: 0;
+  background: rgba(0, 0, 0, 0.822);
+  .bar-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+  }
+  .Menu-bar {
     width: 100%;
-    z-index: 999;
-    padding: 0;
-    .bar-logo{
-        color: white;
-        font-size: 24px;
-        font-weight: 900;
-    }
-    .Menu-bar{
-        width: 100%;
-    }
-    a{
-        margin: 0 10px;
-        color: white;
-        text-decoration:none
-    }
+  }
+  a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+  }
 }

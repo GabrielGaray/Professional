@@ -1,8 +1,10 @@
-.Menu-bar,ul{
-    display: flex;
-    justify-content: space-between;
-    list-style:none;
-    svg{
-        color:white
-    }
+.Menu-bar,
+ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-self: center;
+  svg {
+    color: white;
+  }
 }

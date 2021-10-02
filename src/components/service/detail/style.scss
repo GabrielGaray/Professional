@@ -1,19 +1,17 @@
-.Service-detail{
+.Service-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  .service-detail-img {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  .service-detail-container {
+    background: var(--white);
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    .service-detail-img{
-        background-image: linear-gradient(
-          to bottom,
-          black,
-          transparent,
-          transparent
-        ),
-        url("https://picsum.photos/1000/600");
-      background-size: cover;
-      background-position: center;
-      height: 100vh;
-    }
-    .service-detail-container{
-      background: var(--white);
-    }
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    align-content: flex-start;
+  }
+  
 }

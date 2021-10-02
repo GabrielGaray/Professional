@@ -12,6 +12,9 @@ const MenuBar = () => {
         <li>
           <a href="#product">Productos</a>
         </li>
+        <li>
+          <a href="#service">Servicios</a>
+        </li>
       </ul>
       <div className="hamburguer">
         <Menu />

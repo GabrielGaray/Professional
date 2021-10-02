@@ -17,6 +17,17 @@ export const CartProvider = ({ children }) => {
     } else setCart([...cart, { ...product, amount: 1 }]);
   };
 
+  const substractToCart = (product) => {
+    const indexProduct = isInCart(product?.id);
+
+    if (indexProduct !== -1) {
+      if (cart[indexProduct].amount === 0) return deleteToCart(cart[indexProduct].id);
+      let localCart = [...cart];
+      localCart[indexProduct].amount = --cart[indexProduct].amount;
+      setCart(localCart);
+    } else setCart([...cart, { ...product, amount: 1 }]);
+  };
+
   const deleteToCart = (id) => {
     setCart(cart?.filter((product) => product?.id !== id));
   };
@@ -52,6 +63,7 @@ export const CartProvider = ({ children }) => {
         deleteToCart,
         deleteCart,
         totalPrice,
+        substractToCart,
       }}
     >
       <Cart show={amountProducts > 0} number={amountProducts} />
